@@ -20,12 +20,12 @@ import streamlit as st
 
 PATH = ""
 
-PHOTO_FILE_ID =  st.secrets(['PHOTO_FILE_ID'])
-DEMO1_IMG_FILE_ID = st.secrets(['DEMO1_IMG_FILE_ID'])
-DEMO2_IMG_FILE_ID = st.secrets(['DEMO2_IMG_FILE_ID'])
-MS_PL300_IMG_FILE_ID = st.secrets(['MS_PL300_IMG_FILE_ID'])
-GOOGLESHEET_ID = st.secrets(['GOOGLESHEET_ID']) # gs_id
-SERVICE_ACCOUNT_FILE = st.secrets(['SERVICE_ACCOUNT_FILE'])
+PHOTO_FILE_ID =  st.secrets['PHOTO_FILE_ID']
+DEMO1_IMG_FILE_ID = st.secrets['DEMO1_IMG_FILE_ID']
+DEMO2_IMG_FILE_ID = st.secrets['DEMO2_IMG_FILE_ID']
+MS_PL300_IMG_FILE_ID = st.secrets['MS_PL300_IMG_FILE_ID']
+GOOGLESHEET_ID = st.secrets['GOOGLESHEET_ID'] # gs_id
+SERVICE_ACCOUNT_FILE = st.secrets['SERVICE_ACCOUNT_FILE']
 
 
 # google spreadsheets
