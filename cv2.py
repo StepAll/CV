@@ -113,31 +113,6 @@ def get_photo(photo_file_name, photo_file_id, width=None):
         photo = photo.resize((int(width), int(width*ratio)))
     return photo
 
-def days_to_year_month(days):
-    year_nums = {   1:'год',
-                    2:'годa',
-                    3:'годa',
-                    4:'годa'
-    }
-
-    month_nums = {  1:'месяц',
-                    2:'месяца',
-                    3:'месяца',
-                    4:'месяца'
-    }
-
-    y = days//365
-    m = days%365//30
-
-    y_txt = year_nums.get(int(str(y)[-1]), 'лет') if int(str(y)[-2:]) < 5 or int(str(y)[-2:]) > 20 else 'лет'
-    yy = f"{str(y)} {y_txt}" if y > 0 else ""
-    m_txt = month_nums.get(int(str(m)[-1]), 'месяцев') if int(str(y)[-2:]) < 5 or int(str(y)[-2:]) > 20 else 'месяцев'
-    mm = f"{str(m)} {m_txt}" if m > 0 else ""
-    return f'{yy} {mm}'
-
-
-
-
 
 f_cv, f_tools = get_cv2()
 
