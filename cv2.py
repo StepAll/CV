@@ -168,7 +168,7 @@ with col2:
     st.write ("solegn@gmail.com")
 with col3:
     st.write ("[Резюме на hh.ru](https://saratov.hh.ru/applicant/resumes/view?resume=e2430864ff0148b2630039ed1f4d693363424a)")
-    st.write ("[Резюме в PBI](https://app.powerbi.com/groups/bce2cd63-6737-455f-9332-509602dec7e9/reports/157fee94-4773-437d-ae67-df688b6e9413/ReportSection2468db0506299aa94e2d)")
+    st.write ("[Резюме в PBI](https://app.powerbi.com/view?r=eyJrIjoiZDA1MGM0NzctZTQ0NS00MDY3LTkyNDgtYWVkZjFiOWM3MzEwIiwidCI6IjFmNWMwYzQ5LWU3OTQtNDQ4Ni1iNzU1LTIzOGRiNmMzZTMxZSJ9)")
     
 
 
