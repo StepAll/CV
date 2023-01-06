@@ -1,2 +1,2 @@
 # CV
-# резюме в формате python - streamlit
+резюме в формате python - streamlit
