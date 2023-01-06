@@ -19,25 +19,21 @@ from googleapiclient.http import MediaIoBaseDownload
 import streamlit as st
 
 PATH = ""
-# SERVICE_ACCOUNT_PATH = f'{PATH}streamlit-cv2-key.json'
 
-
-PHOTO_FILE_ID = '1Da3xksceSDu-SIgnc6gkOlGKCYkMork0'
-DEMO1_IMG_FILE_ID = '1En2MlAiNcYKAtFtbOEU9Xxt4XLJgCU_A'
-DEMO2_IMG_FILE_ID = '1EsFjWzuOgsP0xDGJ8jZAYVFSCrU07Qi5'
-MS_PL300_IMG_FILE_ID = '1EtDk9NN7hnb7WnhoST9qSJVKOoK4sfW9'
+PHOTO_FILE_ID =  st.secrets(['PHOTO_FILE_ID'])
+DEMO1_IMG_FILE_ID = st.secrets(['DEMO1_IMG_FILE_ID'])
+DEMO2_IMG_FILE_ID = st.secrets(['DEMO2_IMG_FILE_ID'])
+MS_PL300_IMG_FILE_ID = st.secrets(['MS_PL300_IMG_FILE_ID'])
+GOOGLESHEET_ID = st.secrets(['GOOGLESHEET_ID']) # gs_id
+SERVICE_ACCOUNT_FILE = st.secrets(['SERVICE_ACCOUNT_FILE'])
 
 
 # google spreadsheets
-GOOGLESHEET_ID = '1I2ZsuqxQb1jbUAex1F1org8WepuEXitDfAf1NJhmj88' # gs_id
 F_CV_PAGE_ID = 0  # gs_page_id
 F_CV_PAGE_NAME = 'f_cv' # gs_page_name
 F_TOOLS_PAGE_ID = 1211272847 # gs_page_id
 F_TOOLS_PAGE_NAME = 'f_tools' # gs_page_name
-# google api
-# google api
 
-SERVICE_ACCOUNT_FILE = st.secrets(['SERVICE_ACCOUNT_FILE'])
 
 def get_google_service(service_account_file, api='sheets'):
     """return connection to google api
