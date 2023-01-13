@@ -57,31 +57,11 @@ def get_gs_table(service, gs_id, gs_page_name):
     df = pd.DataFrame(data=data, columns=columns)
     return df
 
+@st.cache
 def get_cv2():
-    # get CV data
-    f_cv_parquet_file_name = f'{PATH}f_cv.to_parquet'
-    f_tools_parquet_file_name = f'{PATH}f_tools.to_parquet'
-
-    # f_cv
-    # if parquet file doesn't exist or it is old get from gs and write to parquet
-    if (        not os.path.isfile(f_cv_parquet_file_name) 
-            or  datetime.datetime.fromtimestamp(os.path.getmtime(f_cv_parquet_file_name)).date() != datetime.datetime.now().date()
-        ):
-        with get_google_service(SERVICE_ACCOUNT_FILE, api='sheets') as service:
-            f_cv = get_gs_table(service, GOOGLESHEET_ID, F_CV_PAGE_NAME)
-        f_cv.to_parquet(f_cv_parquet_file_name)
-
-    # f_tools
-    if (        not os.path.isfile(f_tools_parquet_file_name) 
-            or  datetime.datetime.fromtimestamp(os.path.getmtime(f_tools_parquet_file_name)).date() != datetime.datetime.now().date()
-        ):
-        with get_google_service(SERVICE_ACCOUNT_FILE, api='sheets') as service:
-            f_cv = get_gs_table(service, GOOGLESHEET_ID, F_TOOLS_PAGE_NAME)
-        f_cv.to_parquet(f_tools_parquet_file_name)
-
-
-    f_cv = pd.read_parquet(f_cv_parquet_file_name)
-    f_tools = pd.read_parquet(f_tools_parquet_file_name)
+    with get_google_service(SERVICE_ACCOUNT_FILE, api='sheets') as service:
+        f_cv = get_gs_table(service, GOOGLESHEET_ID, F_CV_PAGE_NAME)
+        f_tools = get_gs_table(service, GOOGLESHEET_ID, F_TOOLS_PAGE_NAME)
 
     f_cv['начало'] = pd.to_datetime(f_cv['начало'], format='%d.%m.%Y')
     f_cv['конец'] = pd.to_datetime(f_cv['конец'], format='%d.%m.%Y')
