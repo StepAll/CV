@@ -1,0 +1,10 @@
+__pycache__/
+.streamlit/
+cv2.ipynb
+demo1.jpg
+demo2.jpg
+f_cv.to_parquet
+f_tools.to_parquet
+MS_PL300.png
+photo_ava.jpg
+streamlit-cv2-key.json
